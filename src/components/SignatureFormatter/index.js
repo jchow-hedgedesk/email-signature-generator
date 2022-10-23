@@ -19,46 +19,51 @@ const EmailExample = styled.div`
   background-color: #fff;
 `;
 
-const Available = e =>
-  `<br/><span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif"><i>${e}</i></span>`;
-const Phone = e =>
-  `<br/><span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">${e}</span>`;
+const formatPhone = (phone) => {
+  return phone.replace(/\s/g, "");
+};
+
+const Phone = (e) =>
+  `<div style="margin-bottom: 5px">
+    <font size="1">Phone:&nbsp;<a href="tel:+14087990172" style="color:rgb(67,142,217)" target="_blank">+1 408 799 0172</a></font>
+  </div>`;
+
+const Calendly = (e) =>
+  `<div style="margin-bottom: 5px">
+<font size="1"><a href="${e}" style="color:rgb(67,142,217)">Schedule Meeting</a></font>
+</div>`;
 
 const Template = ({
   name,
   job,
-  availability,
-  phone
-}) => `<table width="320" cellspacing="0" cellpadding="0" border="0">
-<tr>
-  <td style="vertical-align: top; text-align:left;color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma,sans-serif; text-align:left">
-      <span style="color:#000000;font-size:13px;line-height: 1.5;font-family:'arial black',tahoma, sans-serif;text-transform: uppercase;">
-        ${name}
-      </span>
-      <br/>
-      <span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">
-        ${job}
-      </span>
-      ${typeof availability !== "undefined" ? Available(availability) : ""}
-  </td>
-</tr>
-<tr>
-  <td style="vertical-align: top; text-align:left;color:#444444;font-size:13px;font-family:tahoma,sans-serif; text-align:left">
-    <img width="200" height="93" src="https://www.greenberry.nl/email-animation.gif" alt="Greenberry" style="border:none;" />
-  </td>
-</tr>
-<tr>
-  <td style="vertical-align: top; text-align:left;color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma,sans-serif; text-align:left">
-    <span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">Maliebaan 11</span>
-    <br/>
-    <span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">3581 CA Utrecht</span>
-    <br/>
-    <span style="color:#444444;font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">+31302737424</span>
-    ${typeof phone !== "undefined" ? Phone(phone) : ""}
-    <br/>
-    <a href="https://www.greenberry.nl" style="font-size:13px;line-height: 1.5;font-family:tahoma, sans-serif">www.greenberry.nl</a>
-  </td>
-</tr>
+  email,
+  phone,
+  calendly
+}) => `<table style="font-family:sans-serif">
+  <tbody>
+    <tr>
+      <td style="vertical-align:middle;border-right:medium solid black;padding:0px 5px">
+        <a href="https://www.pangea.io/" style="color:rgb(67,142,217);font-size:15px" target="_blank">
+        <img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="60" alt="pangea_logo" title="pangea_logo">
+        </a></td>
+      <td style="padding:0px 5px">
+        <div style="font-weight:bold">${name}</div>
+        <div style="font-size:13px;margin-bottom:2px">${job}</div>
+        <div style="margin-bottom:2px">
+          <font size="1">Email:&nbsp;<a href="mailto:${email}" style="color:rgb(67,142,217)">${email}</a></font>
+        </div>
+        <div style="margin-bottom: 2px">
+          <font size="1">Phone:&nbsp;<a href="tel:+${formatPhone(
+            phone
+          )}" style="color:rgb(67,142,217)" target="_blank">${phone}</a></font>
+        </div>
+        ${calendly !== "" ? Calendly(calendly) : ""}
+        <div style="margin-bottom: 2px">
+          <font size="1"><a href="https://www.pangea.io" style="color:rgb(67,142,217)">www.pangea.io</a></font>
+        </div>
+      </td>
+    </tr>
+  </tbody>
 </table>`;
 
 const SignatureFormatter = ({ user }) => {

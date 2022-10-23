@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #32323c;
-  color: #fff;
+  background-color: #f6f7ef;
+  color: #494849;
   font-size: 1.125rem;
+  font-family: "Roboto";
 }
