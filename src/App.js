@@ -41,8 +41,8 @@ const Header = styled.h1`
   padding: 0;
   text-transform: uppercase;
   font-weight: 700;
-  line-height: 2.25rem;
-  font-size: 2.5rem;
+  line-height: 2rem;
+  font-size: 2rem;
   vertical-align: middle;
 `;
 
@@ -278,8 +278,8 @@ export default function App() {
                 />
               </g>
             </svg>
-          </Logo>
-          &nbsp; Pangea Signature Generator
+          </Logo>{" "}
+          Pangea Signature Generator
         </Header>
         <UserEditor>
           <Instruction>
@@ -337,8 +337,10 @@ export default function App() {
               value={user.calendly}
             />
             <InputToolTip>
-              <a href="https://calendly.com/app/signup">Sign up</a> for a
-              calendly account here
+              <a href="https://calendly.com/app/signup" target="_blank">
+                Sign up
+              </a>{" "}
+              for a calendly link here
             </InputToolTip>
           </InputWrapper>
           <InputWrapper>
