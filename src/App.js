@@ -96,13 +96,15 @@ const InputElement = styled.input`
 const InputCheckbox = styled.input``;
 
 const InputToolTip = styled.div`
+  max-width: 455px;
+  width: 100%;
   font-size: 0.85rem;
   color: #dc6d4b;
   font-weight: bold;
-  text-align: left;
+  text-align: right;
   margin-left: 230px;
   margin-top: 5px;
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 760px) {
     margin-left: 0;
   }
 `;
