@@ -55,7 +55,7 @@ const Template = ({
           Email:&nbsp;<a href="mailto:${email}" style="color:rgb(67,142,217)">${email}</a>
         </div>
         <div style="color:black;line-height:20px;font-size:10px;">
-          Phone:&nbsp;<a href="tel:+${formatPhone(
+          Phone:&nbsp;<a href="tel:${formatPhone(
             phone
           )}" style="color:rgb(67,142,217)" target="_blank">${phone}</a>
         </div>
