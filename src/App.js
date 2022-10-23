@@ -93,7 +93,11 @@ const InputElement = styled.input`
   }
 `;
 
-const InputCheckbox = styled.input``;
+const InputCheckbox = styled.input`
+  transform: scale(2.25);
+  transform-origin: left;
+  margin: 0;
+`;
 
 const InputToolTip = styled.div`
   max-width: 455px;
