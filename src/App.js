@@ -55,6 +55,13 @@ const Header2 = styled.h2`
   font-size: 1.5rem;
 `;
 
+const Instruction = styled.div`
+  background-color: #fafbf7;
+  padding: 1rem 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+`;
+
 const InputWrapper = styled.div`
   margin: 1rem 0;
 `;
@@ -274,6 +281,20 @@ export default function App() {
           &nbsp; Pangea Signature Generator
         </Header>
         <UserEditor>
+          <Instruction>
+            <h4>Instruction for Gmail:</h4>
+            <ol>
+              <li>Update the sample contact information</li>
+              <li>
+                Highlight the generated signature preview with your mouse cursor
+              </li>
+              <li>Copy (Ctrl + C or Cmd + C)</li>
+              <li>
+                Naviagte to <b>Gmail - Settings - Signature</b>
+              </li>
+              <li>Paste (Ctrl + V or Cmd + V)</li>
+            </ol>
+          </Instruction>
           <p>* - Required Fields</p>
           <InputWrapper>
             <InputLabel>First & Last Name *</InputLabel>

@@ -19,13 +19,6 @@ const EmailExample = styled.div`
   background-color: #fff;
 `;
 
-const EmailInstruction = styled.div`
-  background-color: #fafbf7;
-  padding: 1rem 2rem;
-  line-height: 2.5rem;
-  margin-bottom: 3rem;
-`;
-
 const formatPhone = (phone) => {
   return phone.replace(/\s/g, "");
 };
@@ -86,17 +79,6 @@ const SignatureFormatter = ({ user }) => {
 
   return (
     <Wrapper>
-      <EmailInstruction>
-        <h4>Instruction for Gmail:</h4>
-        <ol>
-          <li>Highlight the signature preview below with your mouse cursor</li>
-          <li>Copy (Ctrl + C or Cmd + C)</li>
-          <li>
-            Naviagte to <b>Gmail - Settings - Signature</b>
-          </li>
-          <li>Paste (Ctrl + V or Cmd + V)</li>
-        </ol>
-      </EmailInstruction>
       <EmailExample dangerouslySetInnerHTML={{ __html: Result }} />
       <EmailResult readonly rows="30" value={Result} />
     </Wrapper>
