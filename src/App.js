@@ -337,7 +337,11 @@ export default function App() {
               value={user.calendly}
             />
             <InputToolTip>
-              <a href="https://calendly.com/app/signup" target="_blank">
+              <a
+                href="https://calendly.com/app/signup"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Sign up
               </a>{" "}
               for a calendly link here
