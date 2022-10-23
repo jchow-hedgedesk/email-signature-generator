@@ -19,22 +19,24 @@ const EmailExample = styled.div`
   background-color: #fff;
 `;
 
+const EmailInstruction = styled.div`
+  background-color: #fafbf7;
+  padding: 1rem 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+`;
+
 const formatPhone = (phone) => {
   return phone.replace(/\s/g, "");
 };
 
-const Phone = (e) =>
-  `<div style="margin-bottom: 5px">
-    <font size="1">Phone:&nbsp;<a href="tel:+14087990172" style="color:rgb(67,142,217)" target="_blank">+1 408 799 0172</a></font>
-  </div>`;
-
 const Calendly = (e) =>
-  `<div style="margin-bottom: 5px">
+  `<div style="color:black;line-height:20px;font-size:10px;">
 <font size="1"><a href="${e}" style="color:rgb(67,142,217)">Schedule Meeting</a></font>
 </div>`;
 
 const Logo = (e) =>
-  `<img style="margin:0 15px" src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="60" alt="pangea_logo" title="pangea_logo">`;
+  `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="70" style="margin:0 10px" alt="pangea_logo" title="pangea_logo">`;
 
 const LogoAnimate = (e) =>
   `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/spinning-logo.gif" width="90" alt="pangea_logo" title="pangea_logo">`;
@@ -54,19 +56,19 @@ const Template = ({
         ${animate === true ? LogoAnimate() : Logo()}
         </a></td>
       <td style="padding:0px 5px">
-        <div style="font-weight:bold">${name}</div>
-        <div style="font-size:13px;margin-bottom:2px">${job}</div>
-        <div style="margin-bottom:2px">
-          <font size="1">Email:&nbsp;<a href="mailto:${email}" style="color:rgb(67,142,217)">${email}</a></font>
+        <div style="font-weight:bold;color:black;">${name}</div>
+        <div style="font-size:13px;margin-bottom:2px;color:black;">${job}</div>
+        <div style="color:black;line-height:20px;font-size:10px;">
+          Email:&nbsp;<a href="mailto:${email}" style="color:rgb(67,142,217)">${email}</a>
         </div>
-        <div style="margin-bottom: 2px">
-          <font size="1">Phone:&nbsp;<a href="tel:+${formatPhone(
+        <div style="color:black;line-height:20px;font-size:10px;">
+          Phone:&nbsp;<a href="tel:+${formatPhone(
             phone
-          )}" style="color:rgb(67,142,217)" target="_blank">${phone}</a></font>
+          )}" style="color:rgb(67,142,217)" target="_blank">${phone}</a>
         </div>
         ${calendly !== "" ? Calendly(calendly) : ""}
-        <div style="margin-bottom: 2px">
-          <font size="1"><a href="https://www.pangea.io" style="color:rgb(67,142,217)">www.pangea.io</a></font>
+        <div style="color:black;line-height:20px;font-size:10px;">
+          <a href="https://www.pangea.io" style="color:rgb(67,142,217)">www.pangea.io</a>
         </div>
       </td>
     </tr>
@@ -84,6 +86,17 @@ const SignatureFormatter = ({ user }) => {
 
   return (
     <Wrapper>
+      <EmailInstruction>
+        <h4>Instruction for Gmail:</h4>
+        <ol>
+          <li>Highlight the signature preview below with your mouse cursor</li>
+          <li>Copy (Ctrl + C or Cmd + C)</li>
+          <li>
+            Naviagte to <b>Gmail - Settings - Signature</b>
+          </li>
+          <li>Paste (Ctrl + V or Cmd + V)</li>
+        </ol>
+      </EmailInstruction>
       <EmailExample dangerouslySetInnerHTML={{ __html: Result }} />
       <EmailResult readonly rows="30" value={Result} />
     </Wrapper>
