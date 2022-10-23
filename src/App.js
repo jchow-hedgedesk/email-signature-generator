@@ -73,7 +73,8 @@ const InputLabel = styled.label`
   margin-right: 2rem;
   margin-bottom: 0.5rem;
   width: 200px;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: bold;
 `;
 
 const InputElement = styled.input`
