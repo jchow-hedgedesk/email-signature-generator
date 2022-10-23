@@ -33,18 +33,25 @@ const Calendly = (e) =>
 <font size="1"><a href="${e}" style="color:rgb(67,142,217)">Schedule Meeting</a></font>
 </div>`;
 
+const Logo = (e) =>
+  `<img style="margin:0 15px" src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="60" alt="pangea_logo" title="pangea_logo">`;
+
+const LogoAnimate = (e) =>
+  `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/spinning-logo.gif" width="90" alt="pangea_logo" title="pangea_logo">`;
+
 const Template = ({
   name,
   job,
   email,
   phone,
-  calendly
+  calendly,
+  animate
 }) => `<table style="font-family:sans-serif">
   <tbody>
     <tr>
       <td style="vertical-align:middle;border-right:medium solid black;padding:0px 5px">
         <a href="https://www.pangea.io/" style="color:rgb(67,142,217);font-size:15px" target="_blank">
-        <img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="60" alt="pangea_logo" title="pangea_logo">
+        ${animate === true ? LogoAnimate() : Logo()}
         </a></td>
       <td style="padding:0px 5px">
         <div style="font-weight:bold">${name}</div>

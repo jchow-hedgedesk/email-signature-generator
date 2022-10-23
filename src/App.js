@@ -85,6 +85,8 @@ const InputElement = styled.input`
   }
 `;
 
+const InputCheckbox = styled.input``;
+
 const InputToolTip = styled.div`
   font-size: 0.85rem;
   color: #dc6d4b;
@@ -99,14 +101,17 @@ const userData = {
   job: "Janitor",
   email: "john@pangea.io",
   phone: "+1 619 777 8888",
-  calendly: "https://calendly.com/john-pangea"
+  calendly: "https://calendly.com/john-pangea",
+  animate: false
 };
 
 export default function App() {
   const [user, setUser] = useState(userData);
 
   const userInfoChange = (e) => {
-    const { name, value } = e.target;
+    const target = e.target;
+    const name = target.name;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     setUser({ ...user, [name]: value });
   };
   return (
@@ -313,6 +318,15 @@ export default function App() {
               <a href="https://calendly.com/app/signup">Sign up</a> for a
               calendly account here
             </InputToolTip>
+          </InputWrapper>
+          <InputWrapper>
+            <InputLabel>Animate</InputLabel>
+            <InputCheckbox
+              name="animate"
+              onChange={userInfoChange}
+              type="checkbox"
+              checked={user.animate}
+            />
           </InputWrapper>
         </UserEditor>
         <Header2>Result</Header2>
