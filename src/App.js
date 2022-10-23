@@ -102,6 +102,9 @@ const InputToolTip = styled.div`
   text-align: left;
   margin-left: 230px;
   margin-top: 5px;
+  @media screen and (max-width: 750px) {
+    margin-left: 0;
+  }
 `;
 
 const userData = {
