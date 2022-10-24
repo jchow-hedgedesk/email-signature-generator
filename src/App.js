@@ -115,7 +115,7 @@ const InputToolTip = styled.div`
 
 const userData = {
   name: "John Doe",
-  job: "Janitor",
+  job: "Software Engineer",
   email: "john@pangea.io",
   phone: "+1 619 777 8888",
   calendly: "https://calendly.com/john-pangea",
@@ -300,7 +300,7 @@ export default function App() {
               </li>
               <li>Copy (Ctrl + C or Cmd + C)</li>
               <li>
-                Naviagte to <b>Gmail - Settings - Signature</b>
+                Navigate to <b>Gmail - Settings - Signature</b>
               </li>
               <li>Paste (Ctrl + V or Cmd + V)</li>
             </ol>
