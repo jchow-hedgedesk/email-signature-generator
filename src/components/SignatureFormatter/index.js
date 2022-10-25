@@ -29,7 +29,7 @@ const Calendly = (e) =>
 </div>`;
 
 const Logo = (e) =>
-  `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/Pangea%20Logo%20+%20Brandmarks/mixedcolor8-01.svg" width="70" style="margin:0 10px" alt="pangea_logo" title="pangea_logo">`;
+  `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/pangea-email-logo.png" width="90" alt="pangea_logo" title="pangea_logo">`;
 
 const LogoAnimate = (e) =>
   `<img src="https://21635149.fs1.hubspotusercontent-na1.net/hubfs/21635149/spinning-logo.gif" width="90" alt="pangea_logo" title="pangea_logo">`;
