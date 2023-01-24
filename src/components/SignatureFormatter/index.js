@@ -79,7 +79,9 @@ const SignatureFormatter = ({ user }) => {
 
   return (
     <Wrapper>
+      <h4>Copy this if you are using Gmail</h4>
       <EmailExample dangerouslySetInnerHTML={{ __html: Result }} />
+      <h4>Copy this if you are using Outlook</h4>
       <EmailResult readonly rows="30" value={Result} />
     </Wrapper>
   );
